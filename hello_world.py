@@ -8,6 +8,6 @@ app = Flask(__name__)
 def say_hi():
 	return "Hello World!"
 
-if __name == "__main__":
+if __name__ == "__main__":
 	app.run(host=environ['IP'],
 		port=int(environ['PORT']))
