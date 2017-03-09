@@ -21,6 +21,18 @@ def hi_person(name):
 	"""
 	return html.format(name.title())
 
+@app.route("/jedi/<first>/<last>")
+def jedi_name(first, last):
+	html = """
+		<h1>
+			Greetings, Jedi Master {}!
+		</h1>
+		<p>
+			May the Force be with you!
+		</p>
+	"""
+	return html.format(last[0:3].title()+first[0:2])
+
 if __name__ == "__main__":
 	app.run(host=environ['IP'],
 		port=int(environ['PORT']))
